@@ -1,17 +1,15 @@
 FROM eclipse-temurin:21-jre
 
-WORKDIR /server
+WORKDIR /app
 
-# Default environment variables
 ENV MEMORY=2G
 ENV JVM_OPTS=""
 
-# Copy server jar
-COPY server.jar server.jar
+COPY server.jar /app/server.jar
+COPY entrypoint.sh /app/entrypoint.sh
 
-# Accept EULA automatically
-RUN echo "eula=true" > eula.txt
+RUN chmod +x /app/entrypoint.sh
 
 EXPOSE 25565
 
-CMD sh -c "java -Xms${MEMORY} -Xmx${MEMORY} $JVM_OPTS -jar server.jar nogui"
+ENTRYPOINT ["sh", "/app/entrypoint.sh"]
