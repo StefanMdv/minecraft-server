@@ -1,0 +1,6 @@
+mc-data/
+*.log
+*.tmp
+*.pid
+*.lock
+.env
