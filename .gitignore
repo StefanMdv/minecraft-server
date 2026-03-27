@@ -3,3 +3,4 @@ mc-data/
 *.tmp
 *.pid
 *.lock
+.env

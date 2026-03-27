@@ -4,10 +4,8 @@ services:
     container_name: mc-server
     ports:
       - "25565:25565"
-    environment:
-      EULA: "TRUE"
-      MEMORY: "2G"
-      JVM_OPTS: "-Xmx2G -Xms2G"
+    env_file:
+      - .env
     volumes:
       - mc-data:/data
     restart: unless-stopped

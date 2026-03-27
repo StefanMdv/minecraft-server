@@ -1,13 +1,5 @@
 # Minecraft Docker Server
 
-## Table of Contents
-- [Description](#description)
-- [Quickstart](#quickstart)
-- [Usage](#usage)
-- [Files](#files)
-
----
-
 ## Description
 
 This repository contains a minimal setup to run a Minecraft server inside a Docker container without relying on prebuilt Minecraft images.
@@ -18,7 +10,14 @@ It includes:
 - Persistent storage configuration to retain world data
 - Environment-based configuration for flexible server setup
 
-The goal is to provide a reproducible and configurable Minecraft server environment.
+
+---
+
+## Table of Contents
+- [Description](#description)
+- [Quickstart](#quickstart)
+- [Usage](#usage)
+- [Files](#files)
 
 ---
 
@@ -30,14 +29,19 @@ The goal is to provide a reproducible and configurable Minecraft server environm
 
 ### Start server
 
+- Clone this repo
+
 ```bash
-git clone https://github.com/<YOUR-GITHUB-USERNAME>/minecraft-server.git
 cd minecraft-server
+```
+ - Create your `.env` using the given `example.env` to configure your environment
+
+```bash
 docker compose build --no-cache
 docker compose up -d
 ```
 
-The server will be available at:
+ - The server will be available at:
 
 ```
 <your-server-ip>:25565
